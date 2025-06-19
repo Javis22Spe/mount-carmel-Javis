@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -9,17 +9,18 @@ import Facilities from './components/Facilities'
 import Contact from './components/Contact'
 import Appointment from './components/Appointment'
 import Testimonies from './components/Testimonies'
-import FAQ from './components/FAQ'
+import Faq from './components/FAQ'
 import Partners from './components/Partners'
+import PartnerForm from './components/PartnerForm'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
         {/* Padding wrapper to avoid content hiding behind Navbar */}
-        <main className="flex-grow pt-24 px-4 sm:pt-28 sm:px-6 md:pt-32 md:px-8 lg:pt-36 lg:px-10 xl:pt-40 xl:px-16">
+        <main className="flex-grow sm:pt-20 sm:px-6">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -28,14 +29,15 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/testimonies" element={<Testimonies />} />
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/partner-form" element={<PartnerForm />} />
           </Routes>
         </main>
 
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 
